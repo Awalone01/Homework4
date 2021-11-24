@@ -21,33 +21,35 @@ public class Main {
             }
         }
             //задача 3
-            int year = 1300;
-            boolean everyHoundredYear = (year % 100 == 0);
+            int year = 443;
 
             if (year % 4 == 0) {
-                if (year % 400 == 0) {
+                System.out.println(year + " год является високосным");
+                } else if (year % 400 == 0) {
                     System.out.println(year + " год является високосным");
-                } else if (everyHoundredYear) {
+                } else if (year % 100 == 0) {
+                    System.out.println(year + " год не является високосным");
+                } else {
                     System.out.println(year + " год не является високосным");
                 }
-            }
 
             //задача 4
-            int deliveryDistance = 101;
+            int deliveryDistance = 50;
             int numberOfDayOne = 1;
             int numberOfDayTwo = 2;
             int numberOfDayThree = 3;
 
             if (deliveryDistance < 20) {
                 System.out.println("Потребуется дней: " + numberOfDayOne);
-            } else if (deliveryDistance > 20 && deliveryDistance <= 60) {
-                System.out.println("Потребуется дней: " + numberOfDayTwo);
+            } if (deliveryDistance >= 20 && deliveryDistance <= 60) {
+                numberOfDayOne += 1;
+                System.out.println("Потребуется дней: " + numberOfDayOne);
             } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
-                System.out.println("Потребуется дней: " + numberOfDayThree);
+                numberOfDayOne += 1;
+                System.out.println("Потребуется дней: " + ++numberOfDayOne);
             } else {
                 System.out.println("Мы не доставляем в эту зону");
             }
-
 
             //задача 5
             int monthNumber = 1;
@@ -78,5 +80,6 @@ public class Main {
                 default:
                     System.out.println("Такого времени года ещё не придумали");
             }
+
         }
     }
